@@ -21,10 +21,9 @@ export default function App() {
   }
 
   const totalVotes: number = votes.good + votes.neutral + votes.bad;
-  let positiveRate =
-    totalVotes > 0
-      ? (positiveRate = Math.round((votes.good * 100) / totalVotes))
-      : 0;
+  let positiveRate: number = 0;
+  if (totalVotes > 0)
+    positiveRate = Math.round((votes.good * 100) / totalVotes);
 
   return (
     <div className={css.app}>
